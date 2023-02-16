@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>자기 소개</title>
+    <style>
+        img {
+            height: 150px;
+            width: 100px;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <h1>
+            자기 소개
+        </h1>
+        <ul>
+            <li>이름 : 우가</li>
+            <li>사는 곳 : 경기도 오산(잠실)</li>
+            <li>안녕하세요. 저는 우가입니다. 만나서 반갑습니다. 저는 올해 27살이고 정말 성공하고 싶어요.</li>
+        </ul>
+    </div>
+    <hr>
+    <div>
+        <h1>인생 영화 BEST 5</h1>
+        <table border="1px solid black">
+            <tr>
+                <th>순위</th>
+                <th>제목</th>
+                <th>포스터</th>
+                <th>줄거리</th>
+                <th>바로가기</th>
+            </tr>
+            <tr>
+                <td>1순위</td>
+                <td>인생은 아름다워</td>
+                <td>
+                    <img
+                        src="https://upload.wikimedia.org/wikipedia/ko/f/f8/%EC%9D%B8%EC%83%9D%EC%9D%80%EC%95%84%EB%A6%84%EB%8B%A4%EC%9B%8C_%ED%8F%AC%EC%8A%A4%ED%84%B0.jpg" />
+                </td>
+                <td>마지막 아들을 살리기 위한 숨박꼭질</td>
+                <td><a target="_blank" href="https://movie.naver.com/movie/bi/mi/basic.naver?code=22126">바로가기</a></td>
+            </tr>
+            <tr>
+                <td>2순위</td>
+                <td>아이언맨1</td>
+                <td>
+                    <img
+                        src="https://movie-phinf.pstatic.net/20111222_37/1324501632182vbSoY_JPEG/movie_image.jpg?type=m203_290_2" />
+                </td>
+                <td>I am Iron man</td>
+                <td><a target="_blank" href="https://movie.naver.com/movie/bi/mi/basic.naver?code=44885">바로가기</a></td>
+            </tr>
+            <tr>
+                <td>3순위</td>
+                <td>이터널 선샤인</td>
+                <td>
+                    <img
+                        src="https://movie-phinf.pstatic.net/20150922_4/14429125602616zXzR_JPEG/movie_image.jpg?type=m203_290_2" />
+                </td>
+                <td>죽도록 싫어했지만 운명이다</td>
+                <td><a target="_blank" href="https://movie.naver.com/movie/bi/mi/basic.naver?code=38444">바로가기</a></td>
+            </tr>
+            <tr>
+                <td>4순위</td>
+                <td>2012</td>
+                <td>
+                    <img
+                        src="https://movie-phinf.pstatic.net/20130515_275/1368583284595htN1c_JPEG/movie_image.jpg?type=m203_290_2" />
+                </td>
+                <td>세계 멸망을 피해 도망가는 재난 영화</td>
+                <td><a target="_blank" href="https://movie.naver.com/movie/bi/mi/basic.naver?code=49727">바로가기</a></td>
+            </tr>
+            <tr>
+                <td>5순위</td>
+                <td>타짜</td>
+                <td>
+                    <img
+                        src="https://movie-phinf.pstatic.net/20211122_91/1637564743461raGXe_JPEG/movie_image.jpg?type=m203_290_2" />
+                </td>
+                <td>마지막 아들을 살리기 위한 숨박꼭질</td>
+                <td><a target="_blank" href="https://movie.naver.com/movie/bi/mi/basic.naver?code=57723">바로가기</a></td>
+            </tr>
+        </table>
+    </div>
+    <hr>
+    <div>
+        <h1>방명록</h1>
+        <p>이름: <input type="text" id="name"></p>
+        <p>본인 취향 영화</p>
+        인생은 아름다워<input type="checkbox" name="movie" onclick='getCheckedCnt()'>
+        아이언맨1<input type="checkbox" name="movie" onclick='getCheckedCnt()'>
+        이터널 선샤인<input type="checkbox" name="movie" onclick='getCheckedCnt()'>
+        2012<input type="checkbox" name="movie" onclick='getCheckedCnt()'>
+        타짜<input type="checkbox" name="movie" onclick='getCheckedCnt()'>
+
+        <button type="button" onclick="click33(this);">제출하기</button>
+    </div>
+</body>
+<script>
+    function click33() {
+        let name = document.querySelector('#name').value;
+        let count = getCheckedCnt();
+        alert(name + '님, 저와 ' + count + '개의 취향이 같으시네요!');
+    }
+    let count = getCheckedCnt;
+    function getCheckedCnt() {
+        const query = 'input[name="movie"]:checked';
+        let selectedElements = document.querySelectorAll(query);
+        const selectedElementsCnt = selectedElements.length;
+        return selectedElementsCnt;
+    }
+</script>
+
+</html>
